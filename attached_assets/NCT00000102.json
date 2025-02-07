@@ -1,0 +1,468 @@
+{
+    "hasResults": false,
+    "derivedSection": {
+        "miscInfoModule": {
+            "versionHolder": "2025-02-03"
+        },
+        "conditionBrowseModule": {
+            "meshes": [
+                {
+                    "id": "D000312",
+                    "term": "Adrenal Hyperplasia, Congenital"
+                },
+                {
+                    "id": "D047808",
+                    "term": "Adrenogenital Syndrome"
+                },
+                {
+                    "id": "D000308",
+                    "term": "Adrenocortical Hyperfunction"
+                },
+                {
+                    "id": "D006965",
+                    "term": "Hyperplasia"
+                }
+            ],
+            "ancestors": [
+                {
+                    "id": "D010335",
+                    "term": "Pathologic Processes"
+                },
+                {
+                    "id": "D012734",
+                    "term": "Disorders of Sex Development"
+                },
+                {
+                    "id": "D014564",
+                    "term": "Urogenital Abnormalities"
+                },
+                {
+                    "id": "D052776",
+                    "term": "Female Urogenital Diseases"
+                },
+                {
+                    "id": "D005261",
+                    "term": "Female Urogenital Diseases and Pregnancy Complications"
+                },
+                {
+                    "id": "D000091642",
+                    "term": "Urogenital Diseases"
+                },
+                {
+                    "id": "D052801",
+                    "term": "Male Urogenital Diseases"
+                },
+                {
+                    "id": "D000013",
+                    "term": "Congenital Abnormalities"
+                },
+                {
+                    "id": "D030342",
+                    "term": "Genetic Diseases, Inborn"
+                },
+                {
+                    "id": "D043202",
+                    "term": "Steroid Metabolism, Inborn Errors"
+                },
+                {
+                    "id": "D008661",
+                    "term": "Metabolism, Inborn Errors"
+                },
+                {
+                    "id": "D008659",
+                    "term": "Metabolic Diseases"
+                },
+                {
+                    "id": "D000307",
+                    "term": "Adrenal Gland Diseases"
+                },
+                {
+                    "id": "D004700",
+                    "term": "Endocrine System Diseases"
+                },
+                {
+                    "id": "D006058",
+                    "term": "Gonadal Disorders"
+                }
+            ],
+            "browseLeaves": [
+                {
+                    "id": "M10016",
+                    "name": "Hyperplasia",
+                    "asFound": "Hyperplasia",
+                    "relevance": "HIGH"
+                },
+                {
+                    "id": "M3664",
+                    "name": "Adrenal Hyperplasia, Congenital",
+                    "asFound": "Congenital Adrenal Hyperplasia",
+                    "relevance": "HIGH"
+                },
+                {
+                    "id": "M25853",
+                    "name": "Adrenogenital Syndrome",
+                    "asFound": "Congenital Adrenal Hyperplasia",
+                    "relevance": "HIGH"
+                },
+                {
+                    "id": "M16355",
+                    "name": "Syndrome",
+                    "relevance": "LOW"
+                },
+                {
+                    "id": "M3660",
+                    "name": "Adrenocortical Hyperfunction",
+                    "asFound": "Adrenal Hyperplasia",
+                    "relevance": "HIGH"
+                },
+                {
+                    "id": "M15545",
+                    "name": "Disorders of Sex Development",
+                    "relevance": "LOW"
+                },
+                {
+                    "id": "M12",
+                    "name": "Congenital Abnormalities",
+                    "relevance": "LOW"
+                },
+                {
+                    "id": "M17314",
+                    "name": "Urogenital Abnormalities",
+                    "relevance": "LOW"
+                },
+                {
+                    "id": "M2875",
+                    "name": "Urogenital Diseases",
+                    "relevance": "LOW"
+                },
+                {
+                    "id": "M27093",
+                    "name": "Female Urogenital Diseases",
+                    "relevance": "LOW"
+                },
+                {
+                    "id": "M14127",
+                    "name": "Pregnancy Complications",
+                    "relevance": "LOW"
+                },
+                {
+                    "id": "M8399",
+                    "name": "Female Urogenital Diseases and Pregnancy Complications",
+                    "relevance": "LOW"
+                },
+                {
+                    "id": "M27095",
+                    "name": "Male Urogenital Diseases",
+                    "relevance": "LOW"
+                },
+                {
+                    "id": "M23686",
+                    "name": "Genetic Diseases, Inborn",
+                    "relevance": "LOW"
+                },
+                {
+                    "id": "M11641",
+                    "name": "Metabolism, Inborn Errors",
+                    "relevance": "LOW"
+                },
+                {
+                    "id": "M25119",
+                    "name": "Steroid Metabolism, Inborn Errors",
+                    "relevance": "LOW"
+                },
+                {
+                    "id": "M11639",
+                    "name": "Metabolic Diseases",
+                    "relevance": "LOW"
+                },
+                {
+                    "id": "M3659",
+                    "name": "Adrenal Gland Diseases",
+                    "relevance": "LOW"
+                },
+                {
+                    "id": "M7862",
+                    "name": "Endocrine System Diseases",
+                    "relevance": "LOW"
+                },
+                {
+                    "id": "M9163",
+                    "name": "Gonadal Disorders",
+                    "relevance": "LOW"
+                },
+                {
+                    "id": "T27",
+                    "name": "21-hydroxylase Deficiency",
+                    "asFound": "Congenital Adrenal Hyperplasia",
+                    "relevance": "HIGH"
+                },
+                {
+                    "id": "T1457",
+                    "name": "Congenital Adrenal Hyperplasia",
+                    "asFound": "Congenital Adrenal Hyperplasia",
+                    "relevance": "HIGH"
+                },
+                {
+                    "id": "T2879",
+                    "name": "Hyperadrenalism",
+                    "relevance": "LOW"
+                }
+            ],
+            "browseBranches": [
+                {
+                    "name": "Symptoms and General Pathology",
+                    "abbrev": "BC23"
+                },
+                {
+                    "name": "All Conditions",
+                    "abbrev": "All"
+                },
+                {
+                    "name": "Urinary Tract, Sexual Organs, and Pregnancy Conditions",
+                    "abbrev": "BXS"
+                },
+                {
+                    "name": "Diseases and Abnormalities at or Before Birth",
+                    "abbrev": "BC16"
+                },
+                {
+                    "name": "Nutritional and Metabolic Diseases",
+                    "abbrev": "BC18"
+                },
+                {
+                    "name": "Gland and Hormone Related Diseases",
+                    "abbrev": "BC19"
+                },
+                {
+                    "name": "Rare Diseases",
+                    "abbrev": "Rare"
+                }
+            ]
+        },
+        "interventionBrowseModule": {
+            "meshes": [
+                {
+                    "id": "D009543",
+                    "term": "Nifedipine"
+                }
+            ],
+            "ancestors": [
+                {
+                    "id": "D002121",
+                    "term": "Calcium Channel Blockers"
+                },
+                {
+                    "id": "D049990",
+                    "term": "Membrane Transport Modulators"
+                },
+                {
+                    "id": "D045504",
+                    "term": "Molecular Mechanisms of Pharmacological Action"
+                },
+                {
+                    "id": "D000077264",
+                    "term": "Calcium-Regulating Hormones and Agents"
+                },
+                {
+                    "id": "D045505",
+                    "term": "Physiological Effects of Drugs"
+                },
+                {
+                    "id": "D014665",
+                    "term": "Vasodilator Agents"
+                },
+                {
+                    "id": "D015149",
+                    "term": "Tocolytic Agents"
+                },
+                {
+                    "id": "D012102",
+                    "term": "Reproductive Control Agents"
+                }
+            ],
+            "browseLeaves": [
+                {
+                    "id": "M5398",
+                    "name": "Calcium, Dietary",
+                    "relevance": "LOW"
+                },
+                {
+                    "id": "M5381",
+                    "name": "Calcium",
+                    "relevance": "LOW"
+                },
+                {
+                    "id": "M7992",
+                    "name": "Epinephrine",
+                    "relevance": "LOW"
+                },
+                {
+                    "id": "M30371",
+                    "name": "Racepinephrine",
+                    "relevance": "LOW"
+                },
+                {
+                    "id": "M211043",
+                    "name": "Epinephryl borate",
+                    "relevance": "LOW"
+                },
+                {
+                    "id": "M12483",
+                    "name": "Nifedipine",
+                    "asFound": "80%",
+                    "relevance": "HIGH"
+                },
+                {
+                    "id": "M5384",
+                    "name": "Calcium Channel Blockers",
+                    "relevance": "LOW"
+                },
+                {
+                    "id": "M9789",
+                    "name": "Hormones",
+                    "relevance": "LOW"
+                },
+                {
+                    "id": "M17412",
+                    "name": "Vasodilator Agents",
+                    "relevance": "LOW"
+                },
+                {
+                    "id": "M17869",
+                    "name": "Tocolytic Agents",
+                    "relevance": "LOW"
+                }
+            ],
+            "browseBranches": [
+                {
+                    "name": "Bone Density Conservation Agents",
+                    "abbrev": "BDCA"
+                },
+                {
+                    "name": "All Drugs and Chemicals",
+                    "abbrev": "All"
+                },
+                {
+                    "name": "Vasoconstrictor Agents",
+                    "abbrev": "VaCoAg"
+                },
+                {
+                    "name": "Respiratory System Agents",
+                    "abbrev": "Resp"
+                },
+                {
+                    "name": "Channel Blockers",
+                    "abbrev": "ChanBlk"
+                },
+                {
+                    "name": "Vasodilator Agents",
+                    "abbrev": "VaDiAg"
+                },
+                {
+                    "name": "Reproductive Control Agents",
+                    "abbrev": "Repr"
+                }
+            ]
+        }
+    },
+    "protocolSection": {
+        "designModule": {
+            "phases": [
+                "PHASE1",
+                "PHASE2"
+            ],
+            "studyType": "INTERVENTIONAL",
+            "designInfo": {
+                "maskingInfo": {
+                    "masking": "DOUBLE"
+                },
+                "primaryPurpose": "TREATMENT",
+                "interventionModel": "PARALLEL"
+            }
+        },
+        "statusModule": {
+            "overallStatus": "COMPLETED",
+            "expandedAccessInfo": {
+                "hasExpandedAccess": false
+            },
+            "statusVerifiedDate": "2004-01",
+            "lastUpdateSubmitDate": "2005-06-23",
+            "studyFirstSubmitDate": "1999-11-03",
+            "studyFirstSubmitQcDate": "1999-11-03",
+            "lastUpdatePostDateStruct": {
+                "date": "2005-06-24",
+                "type": "ESTIMATED"
+            },
+            "studyFirstPostDateStruct": {
+                "date": "1999-11-04",
+                "type": "ESTIMATED"
+            }
+        },
+        "conditionsModule": {
+            "conditions": [
+                "Congenital Adrenal Hyperplasia"
+            ]
+        },
+        "descriptionModule": {
+            "briefSummary": "This study will test the ability of extended release nifedipine (Procardia XL), a blood pressure medication, to permit a decrease in the dose of glucocorticoid medication children take to treat congenital adrenal hyperplasia (CAH).",
+            "detailedDescription": "This protocol is designed to assess both acute and chronic effects of the calcium channel antagonist, nifedipine, on the hypothalamic-pituitary-adrenal axis in patients with congenital adrenal hyperplasia. The multicenter trial is composed of two phases and will involve a double-blind, placebo-controlled parallel design. The goal of Phase I is to examine the ability of nifedipine vs. placebo to decrease adrenocorticotropic hormone (ACTH) levels, as well as to begin to assess the dose-dependency of nifedipine effects. The goal of Phase II is to evaluate the long-term effects of nifedipine; that is, can attenuation of ACTH release by nifedipine permit a decrease in the dosage of glucocorticoid needed to suppress the HPA axis? Such a decrease would, in turn, reduce the deleterious effects of glucocorticoid treatment in CAH."
+        },
+        "eligibilityModule": {
+            "sex": "ALL",
+            "stdAges": [
+                "CHILD",
+                "ADULT"
+            ],
+            "maximumAge": "35 Years",
+            "minimumAge": "14 Years",
+            "healthyVolunteers": false,
+            "eligibilityCriteria": "Inclusion Criteria:\n\n* diagnosed with Congenital Adrenal Hyperplasia (CAH)\n* normal ECG during baseline evaluation\n\nExclusion Criteria:\n\n* history of liver disease, or elevated liver function tests\n* history of cardiovascular disease"
+        },
+        "identificationModule": {
+            "nctId": "NCT00000102",
+            "briefTitle": "Congenital Adrenal Hyperplasia: Calcium Channels as Therapeutic Targets",
+            "organization": {
+                "class": "NIH",
+                "fullName": "National Center for Research Resources (NCRR)"
+            },
+            "orgStudyIdInfo": {
+                "id": "NCRR-M01RR01070-0506"
+            },
+            "secondaryIdInfos": [
+                {
+                    "id": "M01RR001070",
+                    "link": "https://reporter.nih.gov/quickSearch/M01RR001070",
+                    "type": "NIH"
+                }
+            ]
+        },
+        "armsInterventionsModule": {
+            "interventions": [
+                {
+                    "name": "Nifedipine",
+                    "type": "DRUG"
+                }
+            ]
+        },
+        "contactsLocationsModule": {
+            "locations": [
+                {
+                    "city": "Charleston",
+                    "state": "South Carolina",
+                    "country": "United States",
+                    "facility": "Medical University of South Carolina",
+                    "geoPoint": {
+                        "lat": 32.77657,
+                        "lon": -79.93092
+                    }
+                }
+            ]
+        },
+        "sponsorCollaboratorsModule": {
+            "leadSponsor": {
+                "name": "National Center for Research Resources (NCRR)",
+                "class": "NIH"
+            }
+        }
+    }
+}
