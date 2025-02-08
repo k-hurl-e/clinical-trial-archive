@@ -27,7 +27,7 @@ task = "packager.installForAll"
 
 [[workflows.workflow.tasks]]
 task = "shell.exec"
-args = "python clinical_trials_backup.py"
+args = "python clinical_trials_backup.py --max-trials 10"
 
 [deployment]
-run = ["sh", "-c", "python clinical_trials_backup.py"]
+run = ["sh", "-c", "python clinical_trials_backup.py --max-trials 10"]
