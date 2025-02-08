@@ -74,6 +74,7 @@ def update_trials():
     try:
         last_update = db.get_last_update_time()
         total_updated = 0
+        total_new = 0
         next_page_token = None
 
         print(f"\nChecking for updates since {last_update}")
@@ -81,8 +82,10 @@ def update_trials():
 
         while True:
             try:
-                # Use the API fields parameter to get only what we need
-                response = client.get_studies(page_token=next_page_token)
+                response = client.get_studies(
+                    page_token=next_page_token,
+                    min_update_date=last_update
+                )
 
                 if not response or 'studies' not in response:
                     break
@@ -91,13 +94,25 @@ def update_trials():
                 if not studies:
                     break
 
-                print(f"\nProcessing {len(studies)} updated studies...")
+                print(f"\nProcessing batch of {len(studies)} studies...")
+
+                # Track existing vs new trials
+                for study in studies:
+                    nct_id = study.get('protocolSection', {}).get('identificationModule', {}).get('nctId')
+                    if nct_id:
+                        is_new = not db.trial_exists(nct_id)
+                        if is_new:
+                            total_new += 1
+                            print(f"Found new trial: {nct_id}")
+                        else:
+                            total_updated += 1
 
                 # Use bulk insert with ON CONFLICT DO UPDATE
                 stored_count = db.bulk_insert_trials(studies)
-                total_updated += stored_count
 
-                print(f"Updated {stored_count} trials (Total: {total_updated})")
+                print(f"Processed {stored_count} trials:")
+                print(f"- New trials added: {total_new}")
+                print(f"- Existing trials updated: {total_updated}")
 
                 next_page_token = response.get('nextPageToken')
                 if not next_page_token:
@@ -107,7 +122,10 @@ def update_trials():
                 print(f"Error fetching updates: {str(e)}")
                 break
 
-        return total_updated
+        print("\nUpdate Summary:")
+        print(f"Total new trials added: {total_new}")
+        print(f"Total trials updated: {total_updated}")
+        return total_new + total_updated
 
     finally:
         db.close()

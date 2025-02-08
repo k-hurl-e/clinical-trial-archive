@@ -16,12 +16,14 @@ class ClinicalTrialsClient:
         wait=wait_exponential(multiplier=1, min=4, max=10)
     )
     def get_studies(self,
-                   page_token: Optional[str] = None) -> Dict:
+                   page_token: Optional[str] = None,
+                   min_update_date: Optional[datetime] = None) -> Dict:
         """
         Fetch studies from the API.
 
         Args:
             page_token: Token for pagination
+            min_update_date: Only fetch studies updated after this date
 
         Returns:
             API response as dictionary
@@ -45,6 +47,11 @@ class ClinicalTrialsClient:
 
         if page_token:
             params['pageToken'] = page_token
+
+        # Add date filter if provided
+        if min_update_date:
+            date_str = min_update_date.strftime("%Y-%m-%d")
+            params['lastUpdatePostDateFrom'] = date_str
 
         print(f"\nRequesting URL: {self.base_url}")
         print(f"Query parameters: {params}")

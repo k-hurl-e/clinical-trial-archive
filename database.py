@@ -18,8 +18,8 @@ class ClinicalTrialsDB:
                     id SERIAL PRIMARY KEY,
                     nct_id VARCHAR(255) UNIQUE NOT NULL,
                     data JSONB NOT NULL,
-                    conditions TEXT[] NOT NULL DEFAULT '{}',
-                    interventions TEXT[] NOT NULL DEFAULT '{}',
+                    conditions JSONB NOT NULL,
+                    interventions JSONB NOT NULL,
                     has_results BOOLEAN GENERATED ALWAYS AS ((data->>'hasResults')::boolean) STORED,
                     overall_status VARCHAR(50) GENERATED ALWAYS AS ((data->'protocolSection'->'statusModule'->>'overallStatus')::text) STORED,
                     phase VARCHAR(50) GENERATED ALWAYS AS (
@@ -55,38 +55,15 @@ class ClinicalTrialsDB:
             self.conn.commit()
 
     def clean_text(self, text: str) -> str:
-        """Clean text by removing all formatting artifacts and standardizing spacing."""
+        """Clean text by removing formatting artifacts and standardizing spacing."""
         if not text:
             return ''
 
-        # First pass: Remove outer brackets and quotes
-        cleaned = text.strip('{}"\' ')
+        # Remove any surrounding quotes and whitespace
+        text = text.strip('"\' ')
 
-        # Second pass: Remove escaped quotes and internal formatting
-        replacements = [
-            ('\\"', ''),  # escaped double quotes
-            ("\\'", ''),  # escaped single quotes
-            ('"', ''),    # double quotes
-            ("'", ''),    # single quotes
-            ('{', ''),    # curly braces
-            ('}', ''),
-            ('[', ''),    # square brackets
-            (']', ''),
-            ('(', ''),    # parentheses
-            (')', '')
-        ]
-
-        for old, new in replacements:
-            cleaned = cleaned.replace(old, new)
-
-        # Third pass: Split on commas, clean each part
-        parts = [part.strip() for part in cleaned.split(',')]
-
-        # Fourth pass: Filter empty strings and normalize whitespace
-        parts = [' '.join(part.split()) for part in parts if part.strip()]
-
-        # Final pass: Join with standardized comma spacing
-        return ', '.join(parts)
+        # Normalize internal whitespace
+        return ' '.join(text.split())
 
     def extract_conditions(self, data: Dict) -> List[str]:
         """Extract and clean conditions from trial data."""
@@ -132,28 +109,19 @@ class ClinicalTrialsDB:
                 if not nct_id:
                     continue
 
-                # Extract and clean arrays before insertion
-                conditions = [
-                    self.clean_text(condition)
-                    for condition in self.extract_conditions(study)
-                    if condition
-                ]
+                # Extract and clean arrays
+                conditions = self.extract_conditions(study)
+                interventions = self.extract_interventions(study)
 
-                interventions = [
-                    self.clean_text(intervention)
-                    for intervention in self.extract_interventions(study)
-                    if intervention
-                ]
-
-                # Remove any empty strings after cleaning
-                conditions = [c for c in conditions if c.strip()]
-                interventions = [i for i in interventions if i.strip()]
+                # Convert to JSON arrays with proper formatting and ensure UTF-8 encoding
+                conditions_json = json.dumps(conditions, ensure_ascii=False)
+                interventions_json = json.dumps(interventions, ensure_ascii=False)
 
                 values.append((
                     nct_id,
                     json.dumps(study),
-                    conditions,
-                    interventions
+                    conditions_json,
+                    interventions_json
                 ))
 
             if not values:
@@ -215,3 +183,9 @@ class ClinicalTrialsDB:
         """Close the database connection."""
         if self.conn:
             self.conn.close()
+
+    def trial_exists(self, nct_id: str) -> bool:
+        """Check if a trial already exists in the database."""
+        with self.conn.cursor() as cur:
+            cur.execute("SELECT EXISTS(SELECT 1 FROM clinical_trials WHERE nct_id = %s)", (nct_id,))
+            return cur.fetchone()[0]
